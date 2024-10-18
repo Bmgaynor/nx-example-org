@@ -1,33 +1,33 @@
 {
-  "name": "graphql",
+  "name": "graphql-codegen",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/graphql/src",
+  "sourceRoot": "apps/graphql-codegen/src",
   "projectType": "application",
   "tags": [],
   "targets": {
-    "dev": {
+    "serve-old": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "dependsOn": [
         "build"
       ],
       "options": {
-        "buildTarget": "graphql:build",
+        "buildTarget": "graphql-codegen:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "graphql:build:development"
+          "buildTarget": "graphql-codegen:build:development"
         },
         "production": {
-          "buildTarget": "graphql:build:production"
+          "buildTarget": "graphql-codegen:build:production"
         }
       }
     },
-    "codegen-generate": {
+    "dev": {
       "executor": "@nx-tools/nx-graphql-codegen:generate",
       "options": {
-        "config": "./apps/graphql/codegen.ts"
+        "config": "./apps/graphql-codegen/src/codegen.ts"
       }
     }
   }

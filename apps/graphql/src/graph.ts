@@ -1,5 +1,12 @@
 import { ApolloServer } from '@apollo/server';
 
+import { readFileSync } from 'fs';
+import path from 'path';
+import { Resolvers } from './__generated__/resolvers-types';
+const typeDefs = readFileSync(path.join(__dirname, './schema.graphql'), {
+  encoding: 'utf-8',
+});
+
 const books = [
   {
     title: 'The Awakening',
@@ -11,22 +18,12 @@ const books = [
   },
 ];
 
-const typeDefs = `#graphql
-  type Book {
-    title: String
-    author: String
-  }
-  type Query {
-    books: [Book]
-  }
-`;
-
-const resolvers = {
+export const resolvers: Resolvers = {
   Query: {
     books: () => books,
   },
 };
-interface MyContext {
+export interface MyContext {
   token?: string;
 }
 export async function initGraphql() {
