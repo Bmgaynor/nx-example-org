@@ -1,5 +1,7 @@
 import { useFetchBooksQuery } from '../store/__generated__/operations';
 
+import { List } from '@org/react-components';
+
 export function Index() {
   const { data, loading, error } = useFetchBooksQuery();
   if (loading) {
@@ -16,6 +18,7 @@ export function Index() {
           <div id="middle-content">
             <div id="learning-materials" className="rounded shadow">
               <h2>Books</h2>
+              <List />
               {data?.books?.map(({ title, author, subTitle }, index) => (
                 <a
                   href={`/book/${title}`}
