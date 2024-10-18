@@ -4,5 +4,5 @@ type Book {
   subTitle: String
 }
 type Query {
-  books: [Book]
+  books: [Book!]!
 }

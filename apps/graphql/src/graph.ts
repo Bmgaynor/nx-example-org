@@ -11,6 +11,7 @@ const books = [
   {
     title: 'The Awakening',
     author: 'Kate Chopin',
+    subTitle: 'The third',
   },
   {
     title: 'City of Glass',
