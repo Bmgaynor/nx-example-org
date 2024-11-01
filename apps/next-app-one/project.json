@@ -1,5 +1,5 @@
 {
-  "name": "nx-test",
+  "name": "next-app-one",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/next-app-one",
   "projectType": "application",

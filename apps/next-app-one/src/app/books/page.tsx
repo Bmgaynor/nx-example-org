@@ -1,8 +1,8 @@
-import { useFetchBooksQuery } from '../store/__generated__/operations';
-
+'use client';
+import { useFetchBooksQuery } from '../../store/__generated__/operations';
 import { List } from '@org/react-components';
 
-export function Index() {
+export default function Books() {
   const { data, loading, error } = useFetchBooksQuery();
   if (loading) {
     return 'loading...';
@@ -66,5 +66,3 @@ export function Index() {
     </div>
   );
 }
-
-export default Index;
