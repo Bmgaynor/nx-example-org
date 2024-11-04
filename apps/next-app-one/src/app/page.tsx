@@ -1,4 +1,4 @@
-export function Index() {
+export default function Index() {
   /*
    * Replace the elements below with your own.
    *
@@ -465,5 +465,3 @@ export function Index() {
     </div>
   );
 }
-
-export default Index;
